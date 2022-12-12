@@ -1,7 +1,6 @@
 import telebot
 from telebot import types
-
-import example
+import scrap
 
 API_Key = '5856739243:AAE91ARzXdwTlJ0HGDjFDfZ6iY1wMjl_Yro'
 bot = telebot.TeleBot(API_Key)
@@ -25,12 +24,12 @@ def button(message):
 def call_back(call):
     if call.message:
         if call.data=='q1':
-            for curr, value in example.arq_dict.items():
+            for curr, value in scrap.arq_dict.items():
                 arjuyt = curr
                 arq_arjeq = value
                 bot.send_message(call.message.chat.id, f'{arjuyt}:  {arq_arjeq} AMD')
         if call.data=='q2':
-            for curr, value in example.vacharq_dict.items():
+            for curr, value in scrap.vacharq_dict.items():
                 arjuyt = curr
                 vach_arjeq = value
                 bot.send_message(call.message.chat.id, f'{arjuyt}:   {vach_arjeq} AMD')
